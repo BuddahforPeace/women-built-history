@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>She Built the World - The Archive of Women Who Shaped Civilization</title>
+    <style>
+        :root {
+            --color-cream-50: #fcfcf9;
+            --color-cream-100: #fffffd;
+            --color-gray-200: #f5f5f5;
+            --color-gray-300: #a7a9a9;
+            --color-slate-500: #626c71;
+            --color-slate-900: #13343b;
+            --color-charcoal-700: #1f2121;
+            --color-charcoal-800: #262828;
+            --color-teal-300: #32b8c6;
+            --color-teal-500: #21808d;
+            --color-teal-600: #1d7480;
+            --color-teal-700: #1a6873;
+            --color-bg-primary: var(--color-cream-50);
+            --color-bg-elevated: var(--color-cream-100);
+            --color-text-primary: var(--color-slate-900);
+            --color-text-secondary: var(--color-slate-500);
+            --color-accent: var(--color-teal-600);
+            --color-accent-hover: var(--color-teal-700);
+            --font-display: 'Georgia', 'Times New Roman', serif;
+            --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg-primary: var(--color-charcoal-700);
+                --color-bg-elevated: var(--color-charcoal-800);
+                --color-text-primary: var(--color-gray-200);
+                --color-text-secondary: var(--color-gray-300);
+                --color-accent: var(--color-teal-300);
+                --color-accent-hover: var(--color-teal-400);
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--color-bg-elevated);
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, rgba(33, 128, 141, 0.05) 0%, rgba(19, 52, 59, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(50, 184, 198, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--color-teal-600) 0%, var(--color-slate-900) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--color-accent);
+            color: white;
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-accent);
+            border: 2px solid var(--color-accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-accent);
+            color: white;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 4rem 2rem;
+            background: var(--color-bg-elevated);
+        }
+
+        .stats-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Categories Grid */
+        .categories {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .category-card {
+            background: var(--color-bg-elevated);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--color-accent);
+        }
+
+        .category-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .category-card p {
+            color: var(--color-text-secondary);
+        }
+
+        /* Reveal Section */
+        .reveal-section {
+            padding: 5rem 2rem;
+            background: var(--color-bg-elevated);
+        }
+
+        .reveal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .reveal-card {
+            background: var(--color-bg-primary);
+            border-radius: 12px;
+            padding: 3rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-md);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .reveal-card h4 {
+            font-size: 1.3rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .reveal-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+
+        .reveal-card p {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Spotlight */
+        .spotlight {
+            padding: 5rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .spotlight-card {
+            background: var(--color-bg-elevated);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .spotlight-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--color-teal-500), var(--color-teal-700));
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .spotlight h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spotlight .dates {
+            color: var(--color-text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .spotlight-bio {
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .spotlight-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--color-accent);
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-accent);
+            background: var(--color-bg-primary);
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            padding: 5rem 2rem;
+            background: var(--color-bg-elevated);
+        }
+
+        .timeline-scroll {
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow-x: auto;
+            padding: 2rem 0;
+        }
+
+        .timeline-track {
+            display: flex;
+            gap: 3rem;
+            min-width: max-content;
+        }
+
+        .timeline-item {
+            min-width: 300px;
+            background: var(--color-bg-primary);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: -3rem;
+            width: 3rem;
+            height: 2px;
+            background: var(--color-accent);
+        }
+
+        .timeline-item:last-child::before {
+            display: none;
+        }
+
+        .timeline-year {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            margin-bottom: 1rem;
+        }
+
+        /* Submit Section */
+        .submit-section {
+            padding: 5rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .submit-form {
+            background: var(--color-bg-elevated);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-gray-300);
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-accent);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            background: var(--color-slate-900);
+            color: var(--color-gray-200);
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer a {
+            color: var(--color-teal-300);
+            text-decoration: none;
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem 3rem 1rem 1.5rem;
+            border: 2px solid var(--color-accent);
+            border-radius: 50px;
+            font-size: 1rem;
+            background: var(--color-bg-elevated);
+            color: var(--color-text-primary);
+        }
+
+        .search-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(33, 128, 141, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-accent);
+        }
+
+        /* Database Grid */
+        .database-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .woman-card {
+            background: var(--color-bg-elevated);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .woman-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .woman-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-accent);
+        }
+
+        .woman-card .years {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .woman-card .fields {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .field-tag {
+            background: var(--color-accent);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .reveal-card {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-secondary);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Filter Panel */
+        .filter-panel {
+            background: var(--color-bg-elevated);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem auto;
+            max-width: 1400px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .filter-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid var(--color-gray-300);
+            border-radius: 8px;
+            background: var(--color-bg-primary);
+            color: var(--color-text-primary);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#home" class="logo">She Built the World</a>
+        <ul class="nav-links">
+            <li><a href="#explore">Explore</a></li>
+            <li><a href="#miscredited">Stolen Credit</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#submit">Submit</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Half the Story Built the Whole World</h1>
+            <p>A living archive of the women whose labor, ideas, courage, inventions, writing, art, caregiving, leadership, and brilliance shaped human history.</p>
+            <div class="cta-buttons">
+                <a href="#explore" class="btn btn-primary">Explore the Archive</a>
+                <a href="#miscredited" class="btn btn-secondary">See Stolen Credit</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>300+</h3>
+                <p>Women in the Archive</p>
+            </div>
+            <div class="stat-card">
+                <h3>50+</h3>
+                <p>Miscredited Cases Documented</p>
+            </div>
+            <div class="stat-card">
+                <h3>10+</h3>
+                <p>Fields of Impact</p>
+            </div>
+            <div class="stat-card">
+                <h3>∞</h3>
+                <p>More Stories to Add</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section id="explore" class="categories">
+        <div class="section-header">
+            <h2>What Women Built</h2>
+            <p>Explore the fields where women changed the world</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" onclick="filterByField('science')">
+                <h3>🔬 Science &amp; Medicine</h3>
+                <p>Discoveries that saved lives and expanded human knowledge</p>
+            </div>
+            <div class="category-card" onclick="filterByField('invention')">
+                <h3>💡 Invention &amp; Technology</h3>
+                <p>Innovations that transformed how we live</p>
+            </div>
+            <div class="category-card" onclick="filterByField('literature')">
+                <h3>📚 Literature &amp; Writing</h3>
+                <p>Words that moved nations and changed minds</p>
+            </div>
+            <div class="category-card" onclick="filterByField('art')">
+                <h3>🎨 Art &amp; Creativity</h3>
+                <p>Beauty and expression that challenged perceptions</p>
+            </div>
+            <div class="category-card" onclick="filterByField('activism')">
+                <h3>✊ Activism &amp; Civil Rights</h3>
+                <p>Courage that fought for justice and equality</p>
+            </div>
+            <div class="category-card" onclick="filterByField('politics')">
+                <h3>⚖️ Politics &amp; Leadership</h3>
+                <p>Governance that shaped societies</p>
+            </div>
+            <div class="category-card" onclick="filterByField('education')">
+                <h3>📖 Education &amp; Mentorship</h3>
+                <p>Teaching that built generations</p>
+            </div>
+            <div class="category-card" onclick="filterByField('care')">
+                <h3>❤️ Care &amp; Community</h3>
+                <p>Invisible labor that sustained civilization</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reveal Section -->
+    <section id="miscredited" class="reveal-section">
+        <div class="reveal-container">
+            <div class="section-header">
+                <h2>How Much of History Was Told with Women Removed?</h2>
+                <p>The discoveries you know. The women you don't.</p>
+            </div>
+            
+            <div class="reveal-card">
+                <div>
+                    <h4>The Discovery</h4>
+                    <h3>DNA Double Helix Structure</h3>
+                    <p>Nobel Prize awarded to Watson, Crick, and Wilkins in 1962</p>
+                </div>
+                <div>
+                    <h4>The Woman Behind It</h4>
+                    <h3>Rosalind Franklin</h3>
+                    <p>Her X-ray diffraction photographs, particularly Photo 51, were foundational to understanding DNA's structure. Her work was shown to Watson and Crick without her permission.</p>
+                </div>
+            </div>
+
+            <div class="reveal-card">
+                <div>
+                    <h4>The Discovery</h4>
+                    <h3>Nuclear Fission</h3>
+                    <p>Nobel Prize awarded to Otto Hahn in 1944</p>
+                </div>
+                <div>
+                    <h4>The Woman Behind It</h4>
+                    <h3>Lise Meitner</h3>
+                    <p>Co-discovered and explained nuclear fission with Hahn, but was excluded from the Nobel Prize despite her crucial theoretical contributions.</p>
+                </div>
+            </div>
+
+            <div class="reveal-card">
+                <div>
+                    <h4>The Discovery</h4>
+                    <h3>Radio Pulsars</h3>
+                    <p>Nobel Prize awarded to Antony Hewish and Martin Ryle in 1974</p>
+                </div>
+                <div>
+                    <h4>The Woman Behind It</h4>
+                    <h3>Jocelyn Bell Burnell</h3>
+                    <p>As a graduate student, she made the initial observation and discovery of the first radio pulsars, but was excluded from the Nobel Prize.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Woman of the Day Spotlight -->
+    <section class="spotlight">
+        <div class="section-header">
+            <h2>Woman of the Day</h2>
+        </div>
+        <div class="spotlight-card">
+            <div class="spotlight-image">🧬</div>
+            <h3>Rosalind Franklin</h3>
+            <p class="dates">1920 - 1958</p>
+            <p class="spotlight-bio">
+                British biophysicist whose X-ray diffraction work provided critical evidence for understanding the structure of DNA. Her precise measurements and photographs, particularly "Photo 51," revealed the helical structure that would lead to one of the greatest scientific discoveries of the 20th century. Despite her foundational contributions, she was largely uncredited during her lifetime.
+            </p>
+            <div class="spotlight-quote">
+                "Science and everyday life cannot and should not be separated."
+            </div>
+            <a href="#explore" class="btn btn-primary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline">
+        <div class="section-header">
+            <h2>Women Throughout History</h2>
+            <p>From ancient times to today</p>
+        </div>
+        <div class="timeline-scroll">
+            <div class="timeline-track">
+                <div class="timeline-item">
+                    <div class="timeline-year">2300 BCE</div>
+                    <h3>Enheduanna</h3>
+                    <p>First known author in history, Sumerian high priestess and poet</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">415 CE</div>
+                    <h3>Hypatia</h3>
+                    <p>Mathematician, astronomer, and philosopher in Alexandria</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1151</div>
+                    <h3>Hildegard of Bingen</h3>
+                    <p>Composer, philosopher, mystic, and medical writer</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1815</div>
+                    <h3>Ada Lovelace</h3>
+                    <p>Wrote the first computer algorithm</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1903</div>
+                    <h3>Marie Curie</h3>
+                    <p>First woman to win Nobel Prize, discovered radium and polonium</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1955</div>
+                    <h3>Rosa Parks</h3>
+                    <p>Sparked the Montgomery Bus Boycott, catalyst for civil rights movement</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2024</div>
+                    <h3>Katalin Karikó</h3>
+                    <p>mRNA research that enabled COVID-19 vaccines</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Database Section -->
+    <section class="categories">
+        <div class="section-header">
+            <h2>Search the Archive</h2>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by name, field, or achievement...">
+            <span class="search-icon">🔍</span>
+        </div>
+
+        <div class="filter-panel">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <label for="fieldFilter">Field</label>
+                    <select id="fieldFilter" onchange="applyFilters()">
+                        <option value="">All Fields</option>
+                        <option value="Science">Science</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Literature">Literature</option>
+                        <option value="Art">Art</option>
+                        <option value="Activism">Activism</option>
+                        <option value="Politics">Politics</option>
+                        <option value="Invention">Invention</option>
+                        <option value="Education">Education</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="eraFilter">Era</label>
+                    <select id="eraFilter" onchange="applyFilters()">
+                        <option value="">All Eras</option>
+                        <option value="Ancient">Ancient (Before 500 CE)</option>
+                        <option value="Medieval">Medieval (500-1500)</option>
+                        <option value="Early Modern">Early Modern (1500-1800)</option>
+                        <option value="Modern">Modern (1800-1950)</option>
+                        <option value="Contemporary">Contemporary (1950-Present)</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter">Recognition</label>
+                    <select id="statusFilter" onchange="applyFilters()">
+                        <option value="">All</option>
+                        <option value="miscredited">Miscredited/Erased</option>
+                        <option value="pseudonym">Used Male Pseudonym</option>
+                        <option value="recognized">Recognized</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="databaseContainer" class="database-grid">
+            <!-- Database cards will be inserted here by JavaScript -->
+        </div>
+        <div id="loadingIndicator" class="loading hidden">Loading women's histories...</div>
+    </section>
+
+    <!-- Submit Section -->
+    <section id="submit" class="submit-section">
+        <div class="section-header">
+            <h2>Help Restore the Record</h2>
+            <p>Submit a woman whose story deserves recognition</p>
+        </div>
+        <form class="submit-form" onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="birthYear">Birth Year</label>
+                <input type="number" id="birthYear" placeholder="e.g., 1920">
+            </div>
+            <div class="form-group">
+                <label for="deathYear">Death Year (if applicable)</label>
+                <input type="number" id="deathYear" placeholder="e.g., 1958">
+            </div>
+            <div class="form-group">
+                <label for="field">Primary Field *</label>
+                <select id="field" required>
+                    <option value="">Select a field</option>
+                    <option value="Science">Science</option>
+                    <option value="Medicine">Medicine</option>
+                    <option value="Literature">Literature</option>
+                    <option value="Art">Art</option>
+                    <option value="Activism">Activism &amp; Civil Rights</option>
+                    <option value="Politics">Politics &amp; Leadership</option>
+                    <option value="Invention">Invention &amp; Technology</option>
+                    <option value="Education">Education</option>
+                    <option value="Care">Care &amp; Community</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="achievements">Major Achievements *</label>
+                <textarea id="achievements" required placeholder="Describe her key contributions and impact..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="sources">Sources (URLs, books, articles)</label>
+                <textarea id="sources" placeholder="List your sources here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit for Review</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 She Built the World. A living archive dedicated to celebrating women's contributions to civilization.</p>
+        <p>Built with purpose. <a href="#home">Back to Top</a></p>
+    </footer>
+
+    <script>
+        // Sample database of women (seed data)
+        const womenDatabase = [
+            {
+                name: "Rosalind Franklin",
+                years: "1920-1958",
+                fields: ["Science", "Chemistry"],
+                country: "United Kingdom",
+                era: "Modern",
+                status: "miscredited",
+                summary: "Biophysicist whose X-ray diffraction work was foundational to DNA structure discovery",
+                achievements: ["Photo 51 X-ray diffraction image", "Structural analysis of DNA"]
+            },
+            {
+                name: "Marie Curie",
+                years: "1867-1934",
+                fields: ["Science", "Physics"],
+                country: "Poland/France",
+                era: "Modern",
+                status: "recognized",
+                summary: "First woman to win Nobel Prize, discovered radium and polonium",
+                achievements: ["Nobel Prize in Physics (1903)", "Nobel Prize in Chemistry (1911)"]
+            },
+            {
+                name: "Ada Lovelace",
+                years: "1815-1852",
+                fields: ["Mathematics", "Computing"],
+                country: "United Kingdom",
+                era: "Early Modern",
+                status: "recognized",
+                summary: "Wrote the first computer algorithm for Babbage's Analytical Engine",
+                achievements: ["First computer algorithm", "Visionary of computing potential"]
+            },
+            {
+                name: "Lise Meitner",
+                years: "1878-1968",
+                fields: ["Science", "Physics"],
+                country: "Austria",
+                era: "Modern",
+                status: "miscredited",
+                summary: "Co-discovered nuclear fission but excluded from Nobel Prize",
+                achievements: ["Nuclear fission discovery", "Radioactivity research"]
+            },
+            {
+                name: "Harriet Tubman",
+                years: "1822-1913",
+                fields: ["Activism", "Leadership"],
+                country: "United States",
+                era: "Modern",
+                status: "recognized",
+                summary: "Escaped slavery and led hundreds to freedom via Underground Railroad",
+                achievements: ["Led 13 rescue missions", "Civil War scout and spy"]
+            },
+            {
+                name: "Virginia Woolf",
+                years: "1882-1941",
+                fields: ["Literature"],
+                country: "United Kingdom",
+                era: "Modern",
+                status: "recognized",
+                summary: "Pioneering modernist writer who revolutionized narrative structure",
+                achievements: ["Mrs Dalloway", "A Room of One's Own", "To the Lighthouse"]
+            },
+            {
+                name: "Frida Kahlo",
+                years: "1907-1954",
+                fields: ["Art"],
+                country: "Mexico",
+                era: "Modern",
+                status: "recognized",
+                summary: "Iconic painter known for surrealist self-portraits exploring identity and pain",
+                achievements: ["147 paintings", "Mexican cultural icon", "Feminist symbol"]
+            },
+            {
+                name: "Katherine Johnson",
+                years: "1918-2020",
+                fields: ["Mathematics", "Science"],
+                country: "United States",
+                era: "Contemporary",
+                status: "recognized",
+                summary: "NASA mathematician whose calculations were critical for space missions",
+                achievements: ["Apollo 11 trajectory calculations", "Space Shuttle program"]
+            },
+            {
+                name: "George Eliot",
+                years: "1819-1880",
+                fields: ["Literature"],
+                country: "United Kingdom",
+                era: "Modern",
+                status: "pseudonym",
+                summary: "Mary Ann Evans wrote under male name to ensure serious reception",
+                achievements: ["Middlemarch", "The Mill on the Floss", "Silas Marner"]
+            },
+            {
+                name: "Jocelyn Bell Burnell",
+                years: "1943-Present",
+                fields: ["Science", "Astronomy"],
+                country: "United Kingdom",
+                era: "Contemporary",
+                status: "miscredited",
+                summary: "Discovered radio pulsars but excluded from Nobel Prize",
+                achievements: ["First pulsar discovery", "Astrophysics contributions"]
+            },
+            {
+                name: "Maya Angelou",
+                years: "1928-2014",
+                fields: ["Literature", "Activism"],
+                country: "United States",
+                era: "Contemporary",
+                status: "recognized",
+                summary: "Poet, memoirist, and civil rights activist whose words inspired generations",
+                achievements: ["I Know Why the Caged Bird Sings", "Presidential Medal of Freedom"]
+            },
+            {
+                name: "Jane Goodall",
+                years: "1934-Present",
+                fields: ["Science", "Conservation"],
+                country: "United Kingdom",
+                era: "Contemporary",
+                status: "recognized",
+                summary: "Primatologist who revolutionized understanding of chimpanzees and conservation",
+                achievements: ["60+ years of chimpanzee research", "UN Messenger of Peace"]
+            }
+        ];
+
+        let filteredWomen = [...womenDatabase];
+
+        // Display women in database
+        function displayWomen(women) {
+            const container = document.getElementById('databaseContainer');
+            container.innerHTML = '';
+            
+            if (women.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--color-text-secondary); grid-column: 1/-1;">No results found. Try different filters.</p>';
+                return;
+            }
+            
+            women.forEach(woman => {
+                const card = document.createElement('div');
+                card.className = 'woman-card';
+                card.innerHTML = `
+                    <h3>${woman.name}</h3>
+                    <p class="years">${woman.years}</p>
+                    <div class="fields">
+                        ${woman.fields.map(field => `<span class="field-tag">${field}</span>`).join('')}
+                    </div>
+                    <p>${woman.summary}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            filteredWomen = womenDatabase.filter(woman => 
+                woman.name.toLowerCase().includes(query) ||
+                woman.fields.some(field => field.toLowerCase().includes(query)) ||
+                woman.summary.toLowerCase().includes(query)
+            );
+            applyFilters();
+        });
+
+        // Filter functionality
+        function applyFilters() {
+            const fieldFilter = document.getElementById('fieldFilter').value;
+            const eraFilter = document.getElementById('eraFilter').value;
+            const statusFilter = document.getElementById('statusFilter').value;
+            
+            let results = [...filteredWomen];
+            
+            if (fieldFilter) {
+                results = results.filter(woman => woman.fields.includes(fieldFilter));
+            }
+            
+            if (eraFilter) {
+                results = results.filter(woman => woman.era === eraFilter);
+            }
+            
+            if (statusFilter) {
+                results = results.filter(woman => woman.status === statusFilter);
+            }
+            
+            displayWomen(results);
+        }
+
+        // Filter by field from category cards
+        function filterByField(field) {
+            document.getElementById('searchInput').value = field;
+            filteredWomen = womenDatabase.filter(woman => 
+                woman.fields.some(f => f.toLowerCase().includes(field))
+            );
+            applyFilters();
+            document.getElementById('explore').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form submission
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                name: document.getElementById('name').value,
+                birthYear: document.getElementById('birthYear').value,
+                deathYear: document.getElementById('deathYear').value,
+                field: document.getElementById('field').value,
+                achievements: document.getElementById('achievements').value,
+                sources: document.getElementById('sources').value
+            };
+            
+            alert('Thank you for your submission! Your entry will be reviewed and added to the archive.');
+            event.target.reset();
+        }
+
+        // Initialize database display
+        displayWomen(womenDatabase);
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
